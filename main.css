@@ -1,0 +1,110 @@
+.iglog{
+	margin-top: 5px;
+	text-align: right;
+}
+
+.centered{
+	text-align: center;
+	margin-top: 250px;
+}
+
+h1{
+	font-family: "Rajdhani";
+	font-size: 90px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.world{
+	color: #0A8416;
+}
+
+.view{
+	color:#0701AE;
+}
+p {
+	font-family: "Roboto";
+	color: #0701AE;
+}
+
+input{
+	border: 1px black solid;
+}
+
+button{
+	background-color:white;
+}
+
+.login{
+	font-family: "Roboto";
+}
+
+img{
+	height:100%;
+	width:100%;
+}
+
+.nyt img{
+	margin-top: 50px;
+}
+
+.instagram img{
+	margin-top: 50px;
+}
+
+.instagram {
+	padding-top: 30px;
+	background-color: #0A8416;
+	color:white;
+	font-family: "Rajdhani";
+	margin-top: 50px;
+}
+
+.nyt {
+	padding-top: 30px;
+	background-color: #0701AE;
+	color:white;
+	margin-top: 50px;
+}
+
+.nyt h2{
+	font-family: "Rajdhani";
+	color:white;
+	margin-bottom: 0px;
+}
+
+.nyt a {
+	font-family: "Roboto";
+	color:white;
+}
+
+.nyt h1{
+	color:white;
+	font-family: "Rajdhani";
+	font-size: 40px;
+	text-align: center;
+}
+
+.nyt p{
+	font-family: "Roboto";
+	color:white;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-align: center;
+}
+
+.instagram h1{
+	color:white;
+	font-family: "Rajdhani";
+	font-size: 40px;
+	text-align: center;
+	margin-bottom: 0px;
+}
+
+.instagram p{
+	font-family: "Roboto";
+	color:white;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-align: center;
+}
