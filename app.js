@@ -9,8 +9,8 @@ $('document').ready(function(){
   };
   $(".instagram").hide();
   $(".nyt").hide();
-  if($(localStorage.instagram).exists()){
-    $(".login").hide();
+  if(localStorage.getItem("instagram")){
+    $(".iglog").hide();
   }
 })
 
