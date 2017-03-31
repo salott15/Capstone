@@ -12,6 +12,9 @@ $('document').ready(function(){
   if(localStorage.getItem("instagram")){
     $(".iglog").hide();
   }
+  else {
+    $(".instagram").append("<h2>You must log in to Instagram to see this portion of the app.  You can log into Instagram by clicking the link in the upper right hand corner of the screen.<h2>");
+  };
 })
 
 $("input").keyup(function(e){
