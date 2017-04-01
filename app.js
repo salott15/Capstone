@@ -7,7 +7,6 @@ $('document').ready(function(){
     localStorage.setItem("instagram", oAuth);
 	 console.log(oAuth);
   };
-  $(".instagram").hide();
   $(".nyt").hide();
   if(localStorage.getItem("instagram")){
     $(".iglog").hide();
