@@ -22,10 +22,10 @@ $("input").keyup(function(e){
 
 $("button").click(function(){
   $(".centered").removeClass();
-  $(".instagram").html("");
   $(".nyt").html("");
 	loadNyt();
   if(localStorage.getItem("instagram")){
+    $(".instagram").html("");
     loadInstagram();
   }
 });
