@@ -25,7 +25,9 @@ $("button").click(function(){
   $(".instagram").html("");
   $(".nyt").html("");
 	loadNyt();
-	loadInstagram();
+  if(localStorage.getItem("instagram")){
+    loadInstagram();
+  }
 });
 
 function loadNyt(){
