@@ -21,10 +21,7 @@ $("button").click(function(){
   $(".centered").removeClass();
   $(".nyt").html("");
 	loadNyt();
-  if(localStorage.getItem("instagram")){
-    $(".instagram").html("");
-    loadInstagram();
-  }
+  loadInstagram();
 });
 
 function loadNyt(){
