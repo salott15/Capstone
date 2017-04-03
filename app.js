@@ -8,9 +8,7 @@ $('document').ready(function(){
 	 console.log(oAuth);
   };
   $(".nyt").hide();
-  if(localStorage.getItem("instagram")){
-    $(".iglog").hide();
-  }
+  $(".instagram").hide();
 })
 
 $("input").keyup(function(e){
@@ -68,11 +66,17 @@ function loadNyt(){
 
 function callbackInsta(data){
 	console.log(data);
+  if(localStorage.getItem("instagram")){
+    $(".iglog").hide();
   $(".instagram").append("<h1>Instagram</h1>" + "<p>Photos taken in " + $("input").val() +"</p>")
 	for(i=0; i<data.data.length; i++){
 		$(".instagram").append('<img src=' + data.data[i].images.standard_resolution.url + '>' + "<br>")
 		$(".instagram").append(data.data[i].caption.text + "<br>")
 	}
+}
+else{
+  $(".iglog").show();
+}
   //for(i=0; i<10; i++){
     //$(".instagram").append('<img src = "http://fpoimg.com/300x250">' + '<br>')
     //$(".instagram").append("FPOimg" + "<br>")
