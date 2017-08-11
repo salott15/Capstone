@@ -60,7 +60,8 @@ function loadNyt(){
  	});
   $(".instagram").show();*/
 	_500px.api('/photos/search', { term: $("input").val(), page: 1 }, function (response) {
-    console.log(response.data.photos);
+    console.log(response.data,response.data.photos);
+		callbackInsta(response.data.photos)
 	});
  }
 
@@ -69,9 +70,9 @@ function callbackInsta(data){
   if(localStorage.getItem("instagram")){
     $(".instagram").html("");
   $(".instagram").append("<h1>Instagram</h1>" + "<p>Photos taken in " + $("input").val() +"</p>")
-	for(i=0; i<data.data.length; i++){
-		$(".instagram").append('<img src=' + data.data[i].images.standard_resolution.url + '>' + "<br>")
-		$(".instagram").append(data.data[i].caption.text + "<br>")
+	for(i=0; i<data.length; i++){
+		$(".instagram").append('<img src=' + data[i].image_url + '>' + "<br>")
+		$(".instagram").append(data[i].name + "<br>")
 	}
 }
 else{
