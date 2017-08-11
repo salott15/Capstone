@@ -31,11 +31,16 @@
 <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 <script type="text/javascript" src= "app.js"></script>
 <script>
-  $(document).ready(function () {
-    _500px.init({
+$(document).ready(function () {
+
+		_500px.init({
       sdk_key: '04a57d5e6d2c3a8ee908e4c41db09f0f5ec31b26'
     });
-  });
+		// If the user has already logged in & authorized your application, this will fire an 'authorization_obtained' event
+	  _500px.getAuthorizationStatus();
+	  // If the user clicks the login link, log them in
+	  $('#login').click(_500px.login);
+
 	// When the user logs in we will pull their favorite photos
   _500px.on('authorization_obtained', function () {
     $('#not_logged_in').hide();
@@ -60,10 +65,6 @@
     $('#logged_in').hide();
     $('#logged_in').html('');
   });
-  // If the user has already logged in & authorized your application, this will fire an 'authorization_obtained' event
-  _500px.getAuthorizationStatus();
-  // If the user clicks the login link, log them in
-  $('#login').click(_500px.login);
 });
 </script>
 </body>
