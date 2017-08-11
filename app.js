@@ -20,8 +20,8 @@ $("input").keyup(function(e){
 $("button").click(function(){
   $(".centered").removeClass();
   $(".nyt").html("");
-	loadNyt();
   loadInstagram();
+	loadNyt();
 });
 
 function loadNyt(){
