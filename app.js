@@ -45,7 +45,7 @@ function loadNyt(){
  function loadInstagram(){
  	//var url = "https://api.instagram.com/v1/tags/" + $("input").val() + "/media/recent" +
  	//"?access_token=" + localStorage.instagram
-  var url = "https://api.instagram.com/v1/tags/" + $("input").val() + "/media/recent" +
+  /*var url = "https://api.instagram.com/v1/tags/" + $("input").val() + "/media/recent" +
   "?access_token=" + localStorage.instagram
   console.log(url);
  	$.ajax({
@@ -58,7 +58,10 @@ function loadNyt(){
 	}).fail(function(err) {
  	 throw err;
  	});
-  $(".instagram").show();
+  $(".instagram").show();*/
+	_500px.api('/photos/search', { term: $("input").val(), page: 1 }, function (response) {
+    console.log(response.data.photos);
+	});
  }
 
 function callbackInsta(data){
@@ -90,4 +93,3 @@ function callbackNyt(data){
     $(".nyt").append("<a href = '" + data.response.docs[i].web_url + "'>" + data.response.docs[i].snippet + "</a>" + "<br>")
   }
 }
-
