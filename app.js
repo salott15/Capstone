@@ -67,7 +67,8 @@ function loadNyt(){
 
 function callbackInsta(data){
 	console.log(data);
-  if(localStorage.getItem("instagram")){
+	$(".instagram").show();
+  if(localStorage.getItem("500px_isLoggedIn")){
     $(".instagram").html("");
   $(".instagram").append("<h1>Instagram</h1>" + "<p>Photos taken in " + $("input").val() +"</p>")
 	for(i=0; i<data.length; i++){
