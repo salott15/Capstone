@@ -54,7 +54,8 @@ function loadNyt(){
 
 function callbackInsta(data){
 	console.log(data);
-  if(localStorage.getItem("instagram")){
+	$(".instagram").show();
+  if(localStorage.getItem("500px_isLoggedIn")){
     $(".instagram").html("");
   $(".instagram").append("<h1>500px</h1>" + "<p>Photos taken in " + $("input").val() +"</p>")
 	for(i=0; i<data.length; i++){
@@ -65,10 +66,6 @@ function callbackInsta(data){
 else{
   $(".iglog").show();
 }
-  //for(i=0; i<10; i++){
-    //$(".instagram").append('<img src = "http://fpoimg.com/300x250">' + '<br>')
-    //$(".instagram").append("FPOimg" + "<br>")
-  //}
 }
 
 

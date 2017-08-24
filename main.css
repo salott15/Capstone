@@ -1,6 +1,6 @@
 .iglog{
 	margin-top: 5px;
-	text-align: right;
+	text-align: center;
 }
 
 .centered{
@@ -37,7 +37,9 @@ button{
 
 .login{
 	font-family: "Roboto";
+	cursor:pointer;
 }
+.login:hover{ text-decoration:underline; }
 
 img{
 	height:100%;
@@ -108,3 +110,5 @@ img{
 	margin-bottom: 0px;
 	text-align: center;
 }
+
+#logged_in{ display:none; }

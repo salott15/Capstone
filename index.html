@@ -12,8 +12,12 @@
 	<link rel="stylesheet" href="float-grid.css" />
 </head>
 <body>
+<<<<<<< HEAD
 
 <div id="not_logged_in" class = "iglog"><div id="login" class = "login">Log in to 500px</div></div>
+=======
+	<!-- https://api.500px.com/api/js-sdk/authorize?sdk_key=b68e60cff4c929bedea36ca978830c5caca790c3&callback=_500pxCallback82994088 -->
+>>>>>>> bb54efc91ded2ac3a068440fb22d45e61a1a6b11
 <div class = "centered">
 <h1><span class="world">World</span><span class="view">View</span></h1>
 <p>Search the name of a country to see the latest news and pictures!</p>
@@ -22,9 +26,15 @@
 	<input type="text" name="input" placeholder="France">
 	<button>Explore</button>
 </div>
+<div id="not_logged_in" class = "iglog"><div id="login" class = "login">Log in to 500px</div></div>
 </div>
 
+<<<<<<< HEAD
 <div class = "instagram col-6"> <h2 id="not_logged_in" class = "iglog">You must log in to 500px to see this portion of the app.  You can log into 500px by clicking the link in the upper right hand corner of the screen.</h2>
+=======
+<div class = "instagram col-6">
+	<h2 id="not_logged_in" class = "iglog">You must log in to 500px to see this portion of the app.  You can log into Instagram by clicking the link in the upper right hand corner of the screen.</h2>
+>>>>>>> bb54efc91ded2ac3a068440fb22d45e61a1a6b11
 </div>
 
 <div class = "nyt col-6"></div>
@@ -48,6 +58,7 @@ $('#login').click(_500px.login);
 _500px.on('authorization_obtained', function () {
   $('#not_logged_in').hide();
   $('#logged_in').show();
+	localStorage.setItem('500px_isLoggedIn','true');
   // Get my user id
   _500px.api('/users', function (response) {
     me = response.data.user;
