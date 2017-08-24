@@ -24,18 +24,6 @@
       fire_event,
       login_callback;
 
-    // Public methods
-
-    // init(options)
-    //
-    // Initializes the 500px SDK. You must run this command before using the SDK.
-    // Options are specified as an object. Valid options are:
-    // - `sdk_key` (required) The sdk key for your application. You can obtain this key from (http://500px.com/settings/applications)
-    // - `oauth_token` (optional) An oauth token for the current user. If you use `ensureAuthorization`, `login`, `authorization` or `getAuthorizationStatus` this value may be overwritten.
-    //
-    //    _500px.init({
-    //      sdk_key: 'XXXXXXXXXXXXXXXXXXXXXX',
-    //    });
     this.init = function (options) {
       if (this.sdk_key) {
         throw 'init: Already initialized';
@@ -72,32 +60,6 @@
       };
     };
 
-    // api(url, http_method, parameters, callback)
-    //
-    // Executes an API call. All parameters are optional except `url`. `parameters` must be an object and `callback` a function.
-    // The callback will be passed a Response object. The response object has these methods:
-    //
-    //    `success` (boolean) True if no errors occurred, false if errors occured.
-    //    `error` (boolean) True if an error occured.
-    //    `error_message` (string) The text of the error message.
-    //    `status` (integer) The HTTP status code of the response.
-    //    `data` (object) The data returned by the API.
-    //
-    //    _500px.api('/users', function (response) {
-    //      console.log('My User Data Is', response.data);
-    //    });
-    //
-    //    _500px.api('/users/937847/friend', 'post', function (response) {
-    //      console.log('Now following user ', 937847);
-    //    });
-    //
-    //    _500px.api('/photos/899999', 'put', { name: 'My New Photo Name' }, function (response) {
-    //      if (response.success) {
-    //        console.log('Your photo was updated');
-    //      } else {
-    //        console.log('An Error occurred: ', response.error_message);
-    //      }
-    //    });
     this.api = function () {
       if (!this.sdk_key) {
         throw "api: SDK not initialized. Use _500px.init() first.";

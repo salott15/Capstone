@@ -1,5 +1,6 @@
 var oAuth
 
+//App was originally made with Instagram instead of 500px.  Due to a time crunch, instagram was kept where it did not change user comprehension.
 $('document').ready(function(){
 	console.log(window.location.href);
 	if(window.location.href.indexOf("access_token")>-1){
@@ -43,21 +44,7 @@ function loadNyt(){
  }
 
  function loadInstagram(){
- 	//var url = "https://api.instagram.com/v1/tags/" + $("input").val() + "/media/recent" +
- 	//"?access_token=" + localStorage.instagram
-  /*var url = "https://api.instagram.com/v1/tags/" + $("input").val() + "/media/recent" +
-  "?access_token=" + localStorage.instagram
-  console.log(url);
- 	$.ajax({
- 		dataType: 'jsonp',
-  		url: url,
-  		method: 'GET',
-	}).done(function(result) {
-  	console.log(result);
-    callbackInsta(result);
-	}).fail(function(err) {
- 	 throw err;
- 	});
+
   $(".instagram").show();*/
 	_500px.api('/photos/search', { term: $("input").val(), page: 1 }, function (response) {
     console.log(response.data,response.data.photos);
@@ -69,7 +56,7 @@ function callbackInsta(data){
 	console.log(data);
   if(localStorage.getItem("instagram")){
     $(".instagram").html("");
-  $(".instagram").append("<h1>Instagram</h1>" + "<p>Photos taken in " + $("input").val() +"</p>")
+  $(".instagram").append("<h1>500px</h1>" + "<p>Photos taken in " + $("input").val() +"</p>")
 	for(i=0; i<data.length; i++){
 		$(".instagram").append('<img src=' + data[i].image_url + '>' + "<br>")
 		$(".instagram").append(data[i].name + "<br>")
