@@ -242,8 +242,6 @@
       events[event_name].push(callback);
     };
 
-    // off(event_name[, callback])
-    //
     // Unsubscribed from an event. Specify the callback to remove just one funcgtion. Specify no callback to remove all callbacks for an event.
     this.off = function (event_name, callback) {
       var i, current_callback;
