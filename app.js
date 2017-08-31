@@ -45,7 +45,7 @@ function loadNyt(){
 
  function loadInstagram(){
 
-  $(".instagram").show();*/
+  $(".instagram").show();
 	_500px.api('/photos/search', { term: $("input").val(), page: 1 }, function (response) {
     console.log(response.data,response.data.photos);
 		callbackInsta(response.data.photos)
