@@ -110,23 +110,6 @@
       document.body.appendChild(tag);
     };
 
-    // login([callback])
-    //
-    // Logs a user in and authorizes your application. You may specify an optional callback function.
-    // The callback function will be passed a string. It will be `denied` if the user did not authorize the application and `authorized` if the user accepted.
-    // If the user does authorize the application an `authorization_obtained` event will be triggered.
-    //
-    // Once authorized an oauth token is obtain for the user. When making api requests you will not be logged in as that user.
-    //
-    //    _500px.login();
-    //
-    //    _500px.login(function (resposne) {
-    //      if (response == 'denied') {
-    //        console.log('User did not authorize the app');
-    //      } elsif (response == 'authorized') {
-    //        console.log('User did authorize the app');
-    //      }
-    //    });
     this.login = function (callback) {
       if (!this.sdk_key) {
         throw "login: SDK not initialized. Use _500px.init() first.";
