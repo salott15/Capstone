@@ -2,7 +2,7 @@ var oAuth
 
 //App was originally made with Instagram instead of 500px.  Due to a time crunch, instagram was kept where it did not change user comprehension.
 $('document').ready(function(){
-	console.log(window.location.href);
+
 	if(window.location.href.indexOf("access_token")>-1){
     oAuth = window.location.href.replace(/^.*token=/g,'');
     localStorage.setItem("instagram", oAuth);
@@ -11,6 +11,10 @@ $('document').ready(function(){
   $(".nyt").hide();
   $(".instagram").hide();
 })
+
+$('#instructions .close').click(function(){ 
+  $('#instructions').remove(); 
+});
 
 $("input").keyup(function(e){
   if(e.keyCode === 13){
