@@ -58,6 +58,7 @@ $('#login').click(_500px.login);
 
 // When the user logs in we will pull their favorite photos
 _500px.on('authorization_obtained', function () {
+  console.log("hello")
   $('#not_logged_in').hide();
   $('#logged_in').show();
 	localStorage.setItem('500px_isLoggedIn','true');

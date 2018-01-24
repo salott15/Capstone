@@ -184,7 +184,7 @@
     //    `not_authorized` The user is logged in, but has not authorized your app.
     //    `authorized` The user has authorized your app.
     //
-    //    _500px.getAuthorizationStatus(function (response) {
+    //    _500px.getStatus(function (response) {
     //      if (response != 'authorized') {
     //        _500px.login();
     //      }
@@ -351,6 +351,7 @@
     };
 
     login_callback = function (callback, parameters) {
+      console.log("worldview")
       if (parameters.denied && callback && typeof callback == 'function') {
         fire_event('authorization_cancelled');
         callback.call(self, 'denied');
