@@ -77,7 +77,6 @@ function callbackNyt(data){
   console.log(data);
   $(".nyt").append("<h1>The New York Times</h1>" + "<p>Recent articles about " + $("input").val() +"</p>")
   for(i=0; i<data.response.docs.length; i++){
-    if(!data.response.docs[i].multimedia.length){continue}
     $(".nyt").append("<img src ='http://www.nytimes.com/" + data.response.docs[i].multimedia[1].url + "'><br>")
     $(".nyt").append("<h2>" + data.response.docs[i].headline.main + "</h2>")
     $(".nyt").append("<a href = '" + data.response.docs[i].web_url + "'>" + data.response.docs[i].snippet + "</a>" + "<br>")
