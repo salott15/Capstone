@@ -6,73 +6,27 @@
 	<title>WorldView</title>
 
 	<link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cuprum|Source+Serif+Pro" rel="stylesheet">
 
 	<link rel="stylesheet" href="main.css" />
-	<link rel="stylesheet" href="float-grid.css" />
 </head>
 <body>
 
-<div id="not_logged_in" class = "iglog"><div id="login" class = "login">Log in to 500px</div></div>
-
 <div class = "centered">
 <h1><span class="world">World</span><span class="view">View</span></h1>
-<p>Search the name of a country to see the latest news and pictures!</p>
+<p>Search the name of a country to see top news stories.</p>
 
-<div id="instructions">
-  <div class="close">X</div>
-  <div class="content">
-    <h3>To use this site:</h3>
-    <ul>
-      <li>Log into 500px by clicking the link and using the demo account. <br> email: demo1234@demo.com <br> password: abc123</li>
-      <li>Type in the name of a country, region or city, and click explore.</li>
-      <li>Look at the articles and photos that have been recently posted about your search.</li>
-    </ul>
-  </div>
-</div>
-
-<div id="logged_in">
+<div>
 	<input type="text" name="input" placeholder="France">
 	<button>Explore</button>
 </div>
 
-<div class = "instagram col-6"> <h2 id="not_logged_in" class = "iglog">You must log in to 500px to see this portion of the app.  You can log into 500px by clicking the link in the upper right hand corner of the screen.</h2></div>
+<div class = "nyt">
+   
+</div>
 
-
-<div class = "nyt col-6"></div>
-
-<script src="./500px.js"></script>
 <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 <script type="text/javascript" src= "app.js"></script>
-<script>
 
-var me;
-
-_500px.init({
-  sdk_key: '04a57d5e6d2c3a8ee908e4c41db09f0f5ec31b26'
-});
-// If the user has already logged in & authorized your application, this will fire an 'authorization_obtained' event
-_500px.getAuthorizationStatus();
-// If the user clicks the login link, log them in
-$('#login').click(_500px.login);
-
-// When the user logs in we will pull their favorite photos
-_500px.on('authorization_obtained', function () {
-  console.log("hello")
-  $('#not_logged_in').hide();
-  $('#logged_in').show();
-	localStorage.setItem('500px_isLoggedIn','true');
-  // Get my user id
-  _500px.api('/users', function (response) {
-    me = response.data.user;
-
-  });
-});
-_500px.on('logout', function () {
-  $('#not_logged_in').show();
-  $('#logged_in').hide();
-  $('#logged_in').html('');
-});
-</script>
 </body>
 </html>
